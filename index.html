@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+ 
+    <meta charset="UTF-8">
+ 
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+ 
+    <meta name="description"
+        content="Engineer Abdellatif Ismail - Professional Web Developer Portfolio">
+ 
+    <title>Engineer Abdellatif Ismail | Web Developer</title>
+ 
+ 
+    <style>
+ 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+ 
+        html {
+            scroll-behavior: smooth;
+        }
+ 
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #050810;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+ 
+        ::selection {
+            background: #00d9ff;
+            color: #050810;
+        }
+ 
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+ 
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+ 
+ 
+        /* =========================
+           BACKGROUND
+        ========================= */
+ 
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            overflow: hidden;
+        }
+ 
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: .12;
+        }
+ 
+        .circle.one {
+            width: 400px;
+            height: 400px;
+            background: #00d9ff;
+            top: 10%;
+            left: -150px;
+        }
+ 
+        .circle.two {
+            width: 350px;
+            height: 350px;
+            background: #0066ff;
+            right: -100px;
+            top: 55%;
+        }
+ 
+ 
+        /* =========================
+           NAVBAR
+        ========================= */
+ 
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 18px 0;
+            background: rgba(5, 8, 16, .75);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+ 
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+ 
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+ 
+        .logo span {
+            color: #00d9ff;
+        }
+ 
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+ 
+        .nav-links a {
+            color: #aeb9c8;
+            transition: .3s;
+            font-size: 15px;
+        }
+ 
+        .nav-links a:hover {
+            color: #00d9ff;
+        }
+ 
+ 
+        /* =========================
+           HERO
+        ========================= */
+ 
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+        }
+ 
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 70px;
+            align-items: center;
+        }
+ 
+        .available {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            border-radius: 50px;
+            color: #00d9ff;
+            background: rgba(0,217,255,.06);
+            border: 1px solid rgba(0,217,255,.25);
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+ 
+        .available-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #39e879;
+            box-shadow: 0 0 10px #39e879;
+        }
+ 
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 78px);
+            line-height: .98;
+            letter-spacing: -4px;
+        }
+ 
+        .hero h1 .blue {
+            color: #00d9ff;
+        }
+ 
+        .hero h1 .outline {
+            color: transparent;
+            -webkit-text-stroke: 1px #536072;
+        }
+ 
+        .hero-description {
+            color: #98a5b6;
+            font-size: 18px;
+            max-width: 650px;
+            margin: 28px 0;
+        }
+ 
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+ 
+        .btn {
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: .3s;
+            display: inline-block;
+        }
+ 
+        .btn-primary {
+            background: #00d9ff;
+            color: #031019;
+            box-shadow: 0 10px 30px rgba(0,217,255,.12);
+        }
+ 
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,217,255,.25);
+        }
+ 
+        .btn-secondary {
+            border: 1px solid #29364a;
+            color: #d9e2ed;
+        }
+ 
+        .btn-secondary:hover {
+            border-color: #00d9ff;
+            color: #00d9ff;
+            transform: translateY(-5px);
+        }
+ 
+ 
+        /* =========================
+           PROFILE / TYPING CARD
+        ========================= */
+ 
+        .profile-area {
+            position: relative;
+            width: 390px;
+            max-width: 90%;
+            margin: auto;
+        }
+ 
+        .profile-glow {
+            position: absolute;
+            inset: -30px;
+            border-radius: 50%;
+            background: #00d9ff;
+            filter: blur(100px);
+            opacity: .12;
+        }
+ 
+        .profile-card {
+            position: relative;
+            border-radius: 22px;
+            overflow: hidden;
+ 
+            background: linear-gradient(
+                160deg,
+                #0f2f3d,
+                #0a1c28 55%,
+                #060f16
+            );
+ 
+            border: 1px solid rgba(0, 217, 255, .18);
+ 
+            transform: rotate(2deg);
+            transition: .5s;
+ 
+            box-shadow:
+                0 30px 80px rgba(0,0,0,.6),
+                inset 0 1px 0 rgba(255,255,255,.05);
+        }
+ 
+        .profile-card:hover {
+            transform: rotate(0deg) translateY(-10px);
+        }
+ 
+        .card-topbar {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+ 
+            padding: 16px 18px;
+ 
+            background: rgba(255,255,255,.03);
+            border-bottom: 1px solid rgba(255,255,255,.06);
+        }
+ 
+        .card-topbar span {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+ 
+        .card-topbar span:nth-child(1) { background: #ff5f56; }
+        .card-topbar span:nth-child(2) { background: #ffbd2e; }
+        .card-topbar span:nth-child(3) { background: #27c93f; }
+ 
+        .card-body {
+            padding: 40px 30px;
+            min-height: 445px;
+ 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+ 
+            font-family: 'Courier New', Courier, monospace;
+        }
+ 
+        .typing-line {
+            font-size: clamp(20px, 4vw, 28px);
+            font-weight: 700;
+            color: #eafcff;
+            letter-spacing: .5px;
+            line-height: 1.35;
+        }
+ 
+        .typing-line .prompt {
+            color: #00d9ff;
+            margin-right: 10px;
+        }
+ 
+        .typed-cursor {
+            display: inline-block;
+            margin-left: 3px;
+            color: #00d9ff;
+            animation: blink 0.8s steps(1) infinite;
+        }
+ 
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+ 
+        .profile-badge {
+            position: absolute;
+            bottom: 25px;
+            left: -35px;
+ 
+            padding: 13px 18px;
+ 
+            background: rgba(8,13,23,.95);
+ 
+            border: 1px solid rgba(255,255,255,.1);
+ 
+            border-radius: 14px;
+ 
+            backdrop-filter: blur(10px);
+ 
+            color: #cbd5e1;
+            font-size: 13px;
+        }
+ 
+ 
+        /* =========================
+           SECTIONS
+        ========================= */
+ 
+        section {
+            padding: 110px 0;
+        }
+ 
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+ 
+        .section-header span {
+            color: #00d9ff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+ 
+        .section-header h2 {
+            font-size: 43px;
+            margin-top: 10px;
+        }
+ 
+        .section-header p {
+            color: #7f8c9e;
+            margin-top: 10px;
+        }
+ 
+ 
+        /* =========================
+           ABOUT
+        ========================= */
+ 
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+ 
+        .glass-card {
+            padding: 32px;
+            border-radius: 22px;
+ 
+            background: rgba(255,255,255,.035);
+ 
+            border: 1px solid rgba(255,255,255,.07);
+ 
+            transition: .3s;
+        }
+ 
+        .glass-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0,217,255,.35);
+        }
+ 
+        .card-number {
+            color: #00d9ff;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+ 
+        .glass-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+ 
+        .glass-card p {
+            color: #929eae;
+        }
+ 
+ 
+        /* =========================
+           SKILLS
+        ========================= */
+ 
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+ 
+        .skill {
+            padding: 28px 15px;
+            text-align: center;
+ 
+            border-radius: 18px;
+ 
+            background: rgba(255,255,255,.035);
+ 
+            border: 1px solid rgba(255,255,255,.07);
+ 
+            transition: .3s;
+        }
+ 
+        .skill:hover {
+            transform: translateY(-8px);
+            border-color: #00d9ff;
+ 
+            box-shadow:
+                0 15px 40px rgba(0,217,255,.05);
+        }
+ 
+        .skill-icon {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+ 
+        .skill h3 {
+            margin-bottom: 6px;
+        }
+ 
+        .skill p {
+            color: #7f8b9c;
+            font-size: 13px;
+        }
+ 
+ 
+        /* =========================
+           PROJECTS
+        ========================= */
+ 
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+ 
+        .project {
+            overflow: hidden;
+ 
+            border-radius: 22px;
+ 
+            background: rgba(255,255,255,.035);
+ 
+            border: 1px solid rgba(255,255,255,.07);
+ 
+            transition: .4s;
+        }
+ 
+        .project:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0,217,255,.35);
+        }
+ 
+        .project-top {
+            height: 190px;
+ 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+ 
+            font-size: 65px;
+ 
+            background:
+                linear-gradient(
+                    135deg,
+                    #0e1a2c,
+                    #080e1a
+                );
+        }
+ 
+        .project-content {
+            padding: 27px;
+        }
+ 
+        .project-label {
+            color: #00d9ff;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+ 
+        .project h3 {
+            font-size: 24px;
+            margin: 7px 0;
+        }
+ 
+        .project p {
+            color: #909cad;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+ 
+        .project-link {
+            color: #00d9ff;
+            font-weight: bold;
+            transition: .3s;
+        }
+ 
+        .project-link:hover {
+            letter-spacing: 1px;
+        }
+ 
+ 
+        /* =========================
+           TIMELINE
+        ========================= */
+ 
+        .timeline {
+            max-width: 750px;
+            margin: auto;
+ 
+            border-left:
+                2px solid
+                rgba(0,217,255,.2);
+ 
+            padding-left: 35px;
+        }
+ 
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+            padding: 25px;
+ 
+            background: rgba(255,255,255,.035);
+ 
+            border: 1px solid rgba(255,255,255,.07);
+ 
+            border-radius: 18px;
+        }
+ 
+        .timeline-item::before {
+            content: "";
+ 
+            position: absolute;
+ 
+            width: 12px;
+            height: 12px;
+ 
+            border-radius: 50%;
+ 
+            background: #00d9ff;
+ 
+            left: -42px;
+            top: 32px;
+ 
+            box-shadow:
+                0 0 15px
+                rgba(0,217,255,.7);
+        }
+ 
+        .timeline-item span {
+            color: #00d9ff;
+            font-size: 12px;
+        }
+ 
+        .timeline-item h3 {
+            margin: 7px 0;
+        }
+ 
+        .timeline-item p {
+            color: #8f9aaa;
+        }
+ 
+ 
+        /* =========================
+           CONTACT
+        ========================= */
+ 
+        .contact-box {
+            max-width: 900px;
+            margin: auto;
+ 
+            text-align: center;
+ 
+            padding: 65px 30px;
+ 
+            border-radius: 28px;
+ 
+            background:
+                radial-gradient(
+                    circle at top,
+                    rgba(0,217,255,.09),
+                    rgba(255,255,255,.025)
+                );
+ 
+            border:
+                1px solid
+                rgba(0,217,255,.15);
+        }
+ 
+        .contact-box h2 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+ 
+        .contact-box p {
+            color: #8e9aab;
+            max-width: 600px;
+            margin: 0 auto 28px;
+        }
+ 
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+ 
+        .socials a {
+            padding: 11px 18px;
+ 
+            border:
+                1px solid #29364a;
+ 
+            border-radius: 10px;
+ 
+            color: #c4cfdb;
+ 
+            transition: .3s;
+        }
+ 
+        .socials a:hover {
+            color: #00d9ff;
+            border-color: #00d9ff;
+            transform: translateY(-3px);
+        }
+ 
+ 
+        /* =========================
+           FOOTER
+        ========================= */
+ 
+        footer {
+            padding: 28px 0;
+            text-align: center;
+ 
+            border-top:
+                1px solid
+                rgba(255,255,255,.07);
+ 
+            color: #5e6a7c;
+            font-size: 14px;
+        }
+ 
+        footer strong {
+            color: #00d9ff;
+        }
+ 
+ 
+        /* =========================
+           MOBILE
+        ========================= */
+ 
+        @media(max-width: 900px) {
+ 
+            .nav-links {
+                display: none;
+            }
+ 
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+ 
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+ 
+            .hero-buttons {
+                justify-content: center;
+            }
+ 
+            .profile-area {
+                margin-top: 40px;
+            }
+ 
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+ 
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+ 
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+ 
+ 
+        @media(max-width: 500px) {
+ 
+            .hero h1 {
+                font-size: 45px;
+                letter-spacing: -2px;
+            }
+ 
+            section {
+                padding: 80px 0;
+            }
+ 
+            .section-header h2 {
+                font-size: 34px;
+            }
+ 
+            .profile-area {
+                width: 320px;
+            }
+ 
+            .card-body {
+                min-height: 360px;
+            }
+ 
+            .profile-badge {
+                left: 5px;
+            }
+ 
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+ 
+            .contact-box h2 {
+                font-size: 32px;
+            }
+        }
+ 
+    </style>
+ 
+</head>
+ 
+ 
+<body>
+ 
+ 
+    <!-- BACKGROUND -->
+ 
+    <div class="background">
+ 
+        <div class="circle one"></div>
+ 
+        <div class="circle two"></div>
+ 
+    </div>
+ 
+ 
+    <!-- ================= NAVBAR ================= -->
+ 
+    <nav>
+ 
+        <div class="container nav-content">
+ 
+            <a href="#home" class="logo">
+              Eng<span>.</span>Abdellatif
+            </a>
+ 
+            <ul class="nav-links">
+ 
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+ 
+                <li>
+                    <a href="#about">About</a>
+                </li>
+ 
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+ 
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+ 
+                <li>
+                    <a href="#journey">Journey</a>
+                </li>
+ 
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+ 
+            </ul>
+ 
+        </div>
+ 
+    </nav>
+ 
+ 
+    <!-- ================= HERO ================= -->
+ 
+    <section class="hero" id="home">
+ 
+        <div class="container hero-content">
+ 
+ 
+            <div>
+ 
+                <div class="available">
+ 
+                    <span class="available-dot"></span>
+ 
+                    Available for web projects
+ 
+                </div>
+ 
+ 
+                <h1>
+ 
+                    Engineer
+ 
+                    <br>
+ 
+                    <span class="blue">
+                        Abdellatif
+                    </span>
+ 
+                    <br>
+ 
+                    <span class="outline">
+                        Ismail
+                    </span>
+ 
+                </h1>
+ 
+ 
+                <p class="hero-description">
+ 
+                    I'm a Web Developer who creates modern,
+                    responsive and professional websites.
+                    I turn ideas into clean digital experiences.
+ 
+                </p>
+ 
+ 
+                <div class="hero-buttons">
+ 
+                    <a
+                        href="#projects"
+                        class="btn btn-primary">
+ 
+                        View My Projects
+ 
+                    </a>
+ 
+ 
+                    <a
+                        href="#contact"
+                        class="btn btn-secondary">
+ 
+                        Let's Talk
+ 
+                    </a>
+ 
+                </div>
+ 
+            </div>
+ 
+ 
+            <!-- ================= PROFILE / TYPING CARD ================= -->
+ 
+            <div class="profile-area">
+ 
+                <div class="profile-glow"></div>
+ 
+ 
+                <div class="profile-card">
+ 
+                    <div class="card-topbar">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+ 
+                    <div class="card-body" id="cardTyping">
+                        <!-- الأسطر بتتضاف هنا بالجافاسكريبت -->
+                    </div>
+ 
+                </div>
+ 
+ 
+                <div class="profile-badge">
+ 
+                    ● Web Developer
+ 
+                </div>
+ 
+            </div>
+ 
+ 
+        </div>
+ 
+    </section>
+ 
+ 
+    <!-- ================= ABOUT ================= -->
+ 
+    <section id="about">
+ 
+        <div class="container">
+ 
+ 
+            <div class="section-header">
+ 
+                <span>
+                    About Me
+                </span>
+ 
+                <h2>
+                    Who I Am
+                </h2>
+ 
+                <p>
+                    A developer passionate about creating
+                    useful and beautiful websites.
+                </p>
+ 
+            </div>
+ 
+ 
+            <div class="about-grid">
+ 
+ 
+                <div class="glass-card">
+ 
+                    <div class="card-number">
+                        01 / PROFILE
+                    </div>
+ 
+                    <h3>
+                        Web Developer
+                    </h3>
+ 
+                    <p>
+                        My work focuses on building websites
+                        that combine modern design, responsive
+                        layouts and a smooth user experience.
+                    </p>
+ 
+                </div>
+ 
+ 
+                <div class="glass-card">
+ 
+                    <div class="card-number">
+                        02 / MINDSET
+                    </div>
+ 
+                    <h3>
+                        Always Learning
+                    </h3>
+ 
+                    <p>
+                        I continuously improve my development
+                        skills and enjoy turning new ideas
+                        into real projects.
+                    </p>
+ 
+                </div>
+ 
+ 
+            </div>
+ 
+        </div>
+ 
+    </section>
+ 
+ 
+    <!-- ================= SKILLS ================= -->
+ 
+    <section id="skills">
+ 
+        <div class="container">
+ 
+ 
+            <div class="section-header">
+ 
+                <span>
+                    My Skills
+                </span>
+ 
+                <h2>
+                    Technologies
+                </h2>
+ 
+                <p>
+                    Tools and technologies I work with.
+                </p>
+ 
+            </div>
+ 
+ 
+            <div class="skills-grid">
+ 
+ 
+                <div class="skill">
+ 
+                    <div class="skill-icon">
+                        🌐
+                    </div>
+ 
+                    <h3>
+                        HTML
+                    </h3>
+ 
+                    <p>
+                        Modern Structure
+                    </p>
+ 
+                </div>
+ 
+ 
+                <div class="skill">
+ 
+                    <div class="skill-icon">
+                        🎨
+                    </div>
+ 
+                    <h3>
+                        CSS
+                    </h3>
+ 
+                    <p>
+                        Responsive Design
+                    </p>
+ 
+                </div>
+ 
+ 
+                <div class="skill">
+ 
+                    <div class="skill-icon">
+                        ⚡
+                    </div>
+ 
+                    <h3>
+                        JavaScript
+                    </h3>
+ 
+                    <p>
+                        Interactive Websites
+                    </p>
+ 
+                </div>
+ 
+ 
+                <div class="skill">
+ 
+                    <div class="skill-icon">
+                        💻
+                    </div>
+ 
+                    <h3>
+                        Web Development
+                    </h3>
+ 
+                    <p>
+                        Full Website Projects
+                    </p>
+ 
+                </div>
+ 
+ 
+                <div class="skill">
+ 
+                    <div class="skill-icon">
+                        🧩
+                    </div>
+ 
+                    <h3>
+                        UI Design
+                    </h3>
+ 
+                    <p>
+                        Modern Interfaces
+                    </p>
+ 
+                </div>
+ 
+ 
+                <div class="skill">
+ 
+                    <div class="skill-icon">
+                        📱
+                    </div>
+ 
+                    <h3>
+                        Responsive
+                    </h3>
+ 
+                    <p>
+                        Mobile Friendly
+                    </p>
+ 
+                </div>
+ 
+ 
+                <div class="skill">
+ 
+                    <div class="skill-icon">
+                        🔧
+                    </div>
+ 
+                    <h3>
+                        VS Code
+                    </h3>
+ 
+                    <p>
+                        Development
+                    </p>
+ 
+                </div>
+ 
+ 
+                <div class="skill">
+ 
+                    <div class="skill-icon">
+                        🚀
+                    </div>
+ 
+                    <h3>
+                        Problem Solving
+                    </h3>
+ 
+                    <p>
+                        Building Solutions
+                    </p>
+ 
+                </div>
+ 
+ 
+            </div>
+ 
+        </div>
+ 
+    </section>
+ 
+ 
+    <!-- ================= PROJECTS ================= -->
+ 
+    <section id="projects">
+ 
+        <div class="container">
+ 
+ 
+            <div class="section-header">
+ 
+                <span>
+                    My Work
+                </span>
+ 
+                <h2>
+                    Featured Projects
+                </h2>
+ 
+                <p>
+                    Some of the projects I have worked on.
+                </p>
+ 
+            </div>
+ 
+ 
+            <div class="projects-grid">
+ 
+ 
+ 
+ 
+                <!-- AZKARY -->
+ 
+                <article class="project">
+ 
+                    <div class="project-top">
+                        📿
+                    </div>
+ 
+                    <div class="project-content">
+ 
+                        <span class="project-label">
+                            Web Application
+                        </span>
+ 
+                        <h3>
+                            أذكاري
+                        </h3>
+ 
+                        <p>
+                            An Islamic website for daily
+                            adhkar with categories, search,
+                            favorites and a modern interface.
+                        </p>
+ 
+                        <a
+                            href="https://abdellatifismail91-tech.github.io/portifolio./"
+                            target="_blank"
+                            class="project-link">
+ 
+                            View Project →
+ 
+                        </a>
+ 
+                    </div>
+ 
+                </article>
+ 
+ 
+              
+           
+            <article class ="project">
+ 
+                    <div class="project-top">
+                  🔠
+                    </div>
+ 
+                    <div class="project-content">
+ 
+                        <span class="project-label">
+                            English Teacher
+                        </span>
+ 
+                        <h3>
+                            English Teaching 
+                        </h3>
+ 
+                        <p>
+                            A website for an English teacher, showcasing courses, lessons, and contact information.
+                        </p>
+ 
+                        <a
+                            href="https://abdellatifismail91-tech.github.io/mr-mahmoud/"
+                            target="_blank"
+                            class="project-link">
+ 
+                            View Project →
+ 
+                        </a>
+ 
+                    </div>
+                  
+                </article>
+
+                <!-- arabic teacher -->
+
+                <article class ="project">
+ 
+                    <div class="project-top">
+                  👨‍🏫
+                    </div>
+ 
+                    <div class="project-content">
+ 
+                        <span class="project-label">
+                            Arabic Teacher
+                        </span>
+ 
+                        <h3>
+                            Arabic Teaching 
+                        </h3>
+ 
+                        <p>
+                            A website for an Arabic teacher, showcasing courses, lessons, and contact information.
+                        </p>
+ 
+                        <a
+                            href="https://abdellatifismail91-tech.github.io/-/"
+                            target="_blank"
+                            class="project-link">
+ 
+                            View Project →
+ 
+                        </a>
+ 
+                    </div>
+                     
+                    </article>
+
+                <!-- La flame -->
+
+                 <article class ="project">
+ 
+                    <div class="project-top">
+                🍕
+                    </div>
+ 
+                    <div class="project-content">
+ 
+                        <span class="project-label">
+                            LA FLAME
+                        </span>
+ 
+                        <h3>
+                           LA FLAME
+                        </h3>
+ 
+                        <p>
+                            A website for an restaurant, showcasing menu items, locations and contact information.
+                        </p>
+ 
+                        <a
+                            href="https://abdellatifismail91-tech.github.io/LA-FLAME/"
+                            target="_blank"
+                            class="project-link">
+ 
+                            View Project →
+ 
+                        </a>
+ 
+                    </div>
+                  
+                </article>
+
+
+                
+             
+
+                
+                <!-- شركه السياحه -->
+                 <article class="project">
+ 
+                    <div class="project-top">
+                    ✈️
+                    </div>
+ 
+                    <div class="project-content">
+ 
+                        <span class="project-label">
+                            Travel Agency
+                        </span>
+ 
+                        <h3>
+                            شركة السياحه
+                        </h3>
+ 
+                        <p>
+                            A travel agency website with a modern
+                            design, showcasing destinations,
+                            packages and booking options.
+                        </p>
+ 
+                        <a
+                            href="https://abdellatifismail91-tech.github.io/portifolio...../"
+                            target="_blank"
+                            class="project-link">
+ 
+                            View Project →
+ 
+                        </a>
+ 
+                    </div>
+                    <br>
+                </article>
+                <!--mocha-->    
+                <article class="project">
+ 
+                    <div class="project-top">
+                    ☕
+                    </div>
+ 
+                    <div class="project-content">
+ 
+                        <span class="project-label">
+                            Coffee Shop
+                        </span>
+ 
+                        <h3>
+                            Mocha Coffee
+                        </h3>
+ 
+                        <p>
+                            A coffee shop website with a modern
+                            design, showcasing menu items,
+                            locations and contact information.
+                        </p>
+ 
+                        <a
+                            href="https://abdellatifismail91-tech.github.io/portifolio....../"
+                            target="_blank"
+                            class="project-link">
+ 
+                            View Project →
+ 
+                        </a>
+ 
+                    </div>
+                  
+                </article>
+
+
+                   <!-- AYIQ -->
+ 
+                <article class="project">
+ 
+                    <div class="project-top">
+                        👕
+                    </div>
+ 
+                    <div class="project-content">
+ 
+                        <span class="project-label">
+                            E-Commerce
+                        </span>
+ 
+                        <h3>
+                            Ayiq Fashion
+                        </h3>
+ 
+                        <p>
+                            A modern clothing brand website
+                            designed to showcase products
+                            in a clean and attractive way.
+                        </p>
+ 
+                        <a
+                            href="https://ayiqfashion.wixsite.com/ayiq"
+                            target="_blank"
+                            class="project-link">
+ 
+                            Visit Project →
+ 
+                        </a>
+ 
+                    </div>
+ 
+                </article>
+
+
+                  <!-- CLOTHING STORE -->
+ 
+                <article class="project">
+ 
+                    <div class="project-top">
+                        🛍️
+                    </div>
+ 
+                    <div class="project-content">
+ 
+                        <span class="project-label">
+                            E-Commerce
+                        </span>
+ 
+                        <h3>
+                            Clothing Store
+                        </h3>
+ 
+                        <p>
+                            A complete clothing store interface
+                            with products, prices, sizes,
+                            shopping flow and checkout page.
+                        </p>
+ 
+                        <a
+                            href="https://abdellatifismail91-tech.github.io/portifolio/"
+                            target="_blank"
+                            class="project-link">
+ 
+                            View Project →
+ 
+                        </a>
+ 
+                    </div>
+ 
+                </article>
+
+ 
+ 
+ 
+                <!-- PORTFOLIO -->
+ 
+                <article class="project">
+ 
+                    <div class="project-top">
+                        🌐
+                    </div>
+ 
+                    <div class="project-content">
+ 
+                        <span class="project-label">
+                            Portfolio
+                        </span>
+ 
+                        <h3>
+                            Personal Portfolio
+                        </h3>
+ 
+                        <p>
+                            A professional personal portfolio
+                            website built to showcase my skills,
+                            projects and web development journey.
+                        </p>
+ 
+                        <a
+                            href="#home"
+                            class="project-link">
+ 
+                            You Are Here →
+ 
+                        </a>
+ 
+                    </div>
+ 
+                </article>
+ 
+ 
+            </div>
+ 
+        </div>
+ 
+    </section>
+ 
+ 
+    <!-- ================= JOURNEY ================= -->
+ 
+    <section id="journey">
+ 
+        <div class="container">
+ 
+ 
+            <div class="section-header">
+ 
+                <span>
+                    My Journey
+                </span>
+ 
+                <h2>
+                    Learning & Development
+                </h2>
+ 
+                <p>
+                    Growing step by step as a developer.
+                </p>
+ 
+            </div>
+ 
+ 
+            <div class="timeline">
+ 
+ 
+                <div class="timeline-item">
+ 
+                    <span>
+                        START
+                    </span>
+ 
+                    <h3>
+                        Started Web Development
+                    </h3>
+ 
+                    <p>
+                        Began learning the fundamentals of
+                        HTML, CSS and web development.
+                    </p>
+ 
+                </div>
+ 
+ 
+                <div class="timeline-item">
+ 
+                    <span>
+                        BUILD
+                    </span>
+ 
+                    <h3>
+                        Started Building Projects
+                    </h3>
+ 
+                    <p>
+                        Turned what I learned into real
+                        websites and practical projects.
+                    </p>
+ 
+                </div>
+ 
+ 
+                <div class="timeline-item">
+ 
+                    <span>
+                        NOW
+                    </span>
+ 
+                    <h3>
+                        Engineer Abdellatif Ismail
+                    </h3>
+ 
+                    <p>
+                        Continuing to develop my skills and
+                        build better, faster and more
+                        professional websites.
+                    </p>
+ 
+                </div>
+ 
+ 
+            </div>
+ 
+        </div>
+ 
+    </section>
+ 
+ 
+    <!-- ================= CONTACT ================= -->
+ 
+    <section id="contact">
+ 
+        <div class="container">
+ 
+            <div class="contact-box">
+ 
+                <h2>
+                    Let's Build Something Great
+                </h2>
+ 
+                <p>
+                    Have an idea for a website or digital
+                    project? Let's turn your idea into reality.
+                </p>
+ 
+ 
+ 
+ 
+                <div class="socials">
+ 
+                    <a
+                        href="https://wa.me/201060599103"
+                        target="_blank">
+ 
+                        WhatsApp
+ 
+                    </a>
+ 
+                </div>
+ 
+            </div>
+ 
+        </div>
+ 
+    </section>
+ 
+ 
+    <!-- ================= FOOTER ================= -->
+ 
+    <footer>
+ 
+        <p>
+ 
+            &copy; 2026
+ 
+            <strong>
+                Engineer Abdellatif Ismail
+            </strong>
+ 
+            – Web Developer
+ 
+        </p>
+ 
+    </footer>
+ 
+ 
+    <script>
+        // Elegant single-line typewriter loop (type -> pause -> delete -> next phrase)
+        const container = document.getElementById('cardTyping');
+ 
+        container.innerHTML = `
+            <div class="typing-line">
+                <span class="prompt">&lt;</span><span id="typedText"></span><span class="typed-cursor">|</span>
+            </div>
+        `;
+ 
+        const typedTextEl = document.getElementById('typedText');
+ 
+        const phrases = [
+            "hello to engineer abdellatif",
+            "web developer",
+            "welcome to my community"
+        ];
+ 
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+ 
+        function loopType() {
+            const current = phrases[phraseIndex];
+ 
+            if (!deleting) {
+                typedTextEl.textContent = current.slice(0, charIndex + 1);
+                charIndex++;
+ 
+                if (charIndex === current.length) {
+                    deleting = true;
+                    setTimeout(loopType, 1400);
+                    return;
+                }
+                setTimeout(loopType, 75);
+            } else {
+                typedTextEl.textContent = current.slice(0, charIndex - 1);
+                charIndex--;
+ 
+                if (charIndex === 0) {
+                    deleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(loopType, 400);
+                    return;
+                }
+                setTimeout(loopType, 35);
+            }
+        }
+ 
+        window.addEventListener('load', loopType);
+    </script>
+ 
+ 
+</body>
+ 
+</html>
